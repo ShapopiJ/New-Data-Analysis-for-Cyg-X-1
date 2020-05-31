@@ -38,7 +38,7 @@ def average(file, output):
             daily_error.append((1./n) * np.sqrt(error_flux))
             points.append(n)
             systamatic_error.append((sum_flux/float(n)) * (5/100))
-            total_error.append(np.sqrt(error_flux + ((sum_flux/n) * (5/100))**2))
+            total_error.append(np.sqrt( (error_flux/(float(n)**2)) + ((sum_flux/n) * (5/100))**2))
 
 
     np.savetxt(output,
