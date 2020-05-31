@@ -33,11 +33,11 @@ def average(file, output):
                 average_day += hourly_mjd[index]
 
         if sum_flux > 0:
-            daily_mjd.append((average_day/n) + offset)
-            daily_flux.append(sum_flux/n)
-            daily_error.append(np.sqrt(error_flux))
+            daily_mjd.append((average_day/float(n)) + offset)
+            daily_flux.append(sum_flux/float(n))
+            daily_error.append((1./n) * np.sqrt(error_flux))
             points.append(n)
-            systamatic_error.append((sum_flux/n) * (5/100))
+            systamatic_error.append((sum_flux/float(n)) * (5/100))
             total_error.append(np.sqrt(error_flux + ((sum_flux/n) * (5/100))**2))
 
 
