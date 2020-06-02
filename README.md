@@ -3,7 +3,7 @@
 ## Publications from this work
 
 1. [The Persistent Radio Jet Coupled to Hard X-Rays in the Soft State of Cyg X-1](https://ui.adsabs.harvard.edu/abs/2020ApJ...894L..18Z/abstract)
-2. [Correlations and lags between X-ray and radio emission of Cyg X-1](https://arxiv.org/abs/2004.11786)
+2. [Correlations and lags between X-ray and radio emission of Cyg X-1](https://arxiv.org/abs/2004.11786v2)
 
 ### CODES
 
