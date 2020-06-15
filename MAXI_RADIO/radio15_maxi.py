@@ -23,7 +23,7 @@ else:           #For sum calculations
 
 from combine import combine
 radio_data = 'cygx1_radio15_1day_complete.dat'
-combine('../radio15_2017_2018_1day.dat', '../cygx1_radio15_1day.ascii', radio_data)
+combine('../radio15_2017_2018_1day.dat', '../cygx1_radio15_1day.dat', radio_data)
 combine('../radio15_2019_1day.dat', radio_data, radio_data)
 
 from cc import Correlate

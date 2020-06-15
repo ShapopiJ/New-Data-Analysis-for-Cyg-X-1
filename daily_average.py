@@ -46,3 +46,20 @@ def average(file, output):
     header='Daily averaged data\nMJD\tFlux[Jy]\tError[Jy]\tSysError\tTotal Error\t# of points',
     fmt = '%.4f %e %e %e %e %d',
     delimiter='\t')
+
+def add_uncertainty(file, output, percentage):      #add percentage uncertainty to error
+    import numpy as np
+    mjd, flux, error, pointings = np.loadtxt(file, unpack=True)
+    
+    for i in range(len(flux)):
+        uncertainty = flux[i]*(percentage/100.)
+        error[i] = np.sqrt((error[i]**2) + (uncertainty**2))    #in quadrature
+        #error[i] += uncertainty
+    np.savetxt(output,
+    np.c_[mjd, flux, error, pointings],
+    header='Daily averaged data with uncertainty added\nAv. MJD\tAv. Flux[Jy]\tError(sys. +unc.) [Jy]\t# of points',
+    fmt='%.5f %e %e %d',
+    delimiter='\t')
+
+    
+
